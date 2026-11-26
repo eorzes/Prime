@@ -1,0 +1,29 @@
+*~
+__pycache__/
+
+.Xil/
+vivado*.jou
+vivado*.log
+
+# Ignore the example projects (contents, not the folder, so the ! rules work)
+prj/*
+
+# Keep the scripts to generate the project
+!prj/*.bat
+!prj/*.tcl
+
+# Keep transceiver example design for the external QPLL hdl files
+!prj/m_gth_ex/
+prj/m_gth_ex/*
+!prj/m_gth_ex/imports/
+
+# Ignore everything in src/ip and src/bd, but not the folders themselves
+src/ip/**
+src/bd/**
+!src/ip/**/
+!src/bd/**/
+
+# But keep .tcl files (for .xci and .bd generation) and bd wrappers
+!src/ip/**/*.tcl
+!src/bd/**/*.tcl
+!src/bd/**/*_wrapper.vhd

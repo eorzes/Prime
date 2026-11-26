@@ -1,0 +1,26 @@
+1. open hardware manager on the machine to share
+2. run on tcl: exec hw_server -d
+3. get the host name for tcl: TCP:dart28tbpc:3121
+3b. dedicated hd server for vitis: see below***
+big one: TCP:pcphese71:3121
+4. open hardware manager onthe other machine.
+5. open target > new > remote target
+
+terminate: on command prompt:
+6. netstat -aon | find “3121”
+7. taskkill /F /PID 77196
+
+https://adaptivesupport.amd.com/s/article/1103513?language=en_US
+
+
+***
+# See where you are
+pwd
+
+# Create the file here for a dedicated hd_device (here the VPK180) 
+set f [open "vpk180_hw.init" w]
+puts $f {set jtag-port-filter VPK180}
+close $f
+puts "Created: [file normalize vpk180_hw.init]"
+
+exec hw_server -d -s tcp::3122 --init=[file normalize vpk180_hw.init]

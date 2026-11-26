@@ -1,0 +1,9 @@
+https://docs.amd.com/r/en-US/am010-versal-selectio/DQS_BIAS-DC_BIAS-and-AC-Coupling
+
+AC Coupling Recommendations
+When receiving data from an AC coupled driver (like a clock source), 
+care must be taken to ensure the appropriate bias levels are selected 
+so that the receiver's input threshold requirements are met. 
+If the receiver uses LVDS15 and resides in a 1.5V powered bank, 
+a DC_BIAS value of DC_BIAS_1 along with DIFF_TERM_ADV setting of TERM_100 ensure 
+that both a DC bias level and termination are provided inside the IOB for an AC coupled input.

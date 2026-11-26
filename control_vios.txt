@@ -1,0 +1,10 @@
+set project_dir [get_property DIRECTORY [current_project]]
+set prj_dir [file dirname $project_dir]
+source [file join $prj_dir "rxpi_dmon_vio.tcl"]
+rxpi_dmon_init hw_vio_5
+
+
+set project_dir [get_property DIRECTORY [current_project]]
+set prj_dir [file dirname $project_dir]
+source [file join $prj_dir "rx_dapi_vio.tcl"]
+rxpi_dmon_init hw_vio_6
